@@ -1,0 +1,86 @@
+ main {
+     position: absolute;
+     width: 100%;
+     top: 0rem;
+     z-index: 1;
+ }
+
+
+ .side-nav-content {
+     color: #e9d5d5;
+     width: 230px;
+     margin-right: 10px;
+ }
+
+
+ .black-border {
+     border: 1px solid rgb(7, 218, 246);
+ }
+
+ .black-border p {
+     font-size: 1.5rem;
+     text-transform: uppercase;
+     font-weight: 600;
+     text-align: center;
+     margin-left: 4px;
+ }
+
+ hr {
+     color: #e9d5d5;
+     font-size: 1.2rem;
+ }
+
+
+ .side-nav-app {
+     position: fixed;
+     left: 0rem;
+     width: 200px;
+     height: 100vh;
+     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+     background-color: rgb(12, 166, 249);
+     border-top: 1px solid white;
+ }
+
+ .nav-list {
+     list-style: none;
+     text-decoration: none;
+     height: 100%;
+     padding: 0%;
+     margin-bottom: 0%;
+ }
+
+ .nav-list-item {
+     margin-top: 10px;
+     display: flex;
+     align-items: center;
+     height: 50px;
+ }
+
+ .nav-list-item:hover {
+     background-color: rgba(255, 255, 255, 0.2);
+     border-radius: 10px;
+ }
+
+ .nav-list-item i {
+     font-size: 20px;
+     height: 25px;
+     width: 25px;
+     margin-right: 15px;
+     margin-left: 10px;
+     text-align: center;
+     line-height: 20px;
+ }
+
+ .nav-list-item span {
+     width: 170px;
+     text-transform: capitalize;
+     letter-spacing: 3px;
+     cursor: pointer;
+ }
+
+ a {
+     text-decoration: none;
+     list-style: none;
+     color: white;
+     font-size: 1.1rem;
+ }

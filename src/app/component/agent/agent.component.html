@@ -1,0 +1,193 @@
+<div class="container-fluid g-0">
+    <div class="header">
+        <h2>{{ title }}</h2>
+    </div>
+    <hr>
+    <div class="d-flex header-separe">
+        <div>
+            <input type="search" placeholder="Entrez le numero matricule ..." [(ngModel)]="search">
+            <i class="fa fa-search btn btn-primary" (click)=" searchAgent()"></i>
+        </div>
+        <div class="add">
+            <i class="fa fa-plus btn btn-primary" data-bs-toggle="modal" data-bs-target="#ajoutAgent">
+                <span>ajouter</span></i>
+        </div>
+    </div>
+    <hr>
+    <div class="container">
+        <div class="d-flex content-page">
+            <div class="content">
+                <div class="d-flex content-items">
+                    <div>
+                        <span>Matricule : </span>
+                    </div>
+                    <div *ngFor="let x of agent_search">
+                        <div><span>{{ x.matricule }}</span></div>
+                    </div>
+
+                </div>
+                <div class="d-flex content-items">
+                    <div>
+                        <span>Nom : </span>
+                    </div>
+                    <div *ngFor="let x of agent_search">
+                        <div><span>{{ x.nom_agent }}</span></div>
+                    </div>
+                </div>
+                <div class="d-flex content-items">
+                    <div>
+                        <span>Prenom : </span>
+                    </div>
+                    <div *ngFor="let x of agent_search">
+                        <div><span>{{ x.prenom_agent }}</span></div>
+                    </div>
+                </div>
+                <div class="d-flex content-items">
+                    <div>
+                        <span>adresse : </span>
+                    </div>
+                    <div *ngFor="let x of agent_search">
+                        <div><span>{{ x.adresse_agent }}</span></div>
+                    </div>
+                </div>
+                <div class="d-flex content-items">
+                    <div>
+                        <span>CIN : </span>
+                    </div>
+                    <div *ngFor="let x of agent_search">
+                        <div><span>{{ x.cin }}</span></div>
+                    </div>
+                </div>
+                <div class="d-flex content-items">
+                    <div>
+                        <span>Date de naissance : </span>
+                    </div>
+                    <div *ngFor="let x of agent_search">
+                        <div><span>{{ x.naissance }}</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content">
+                <div class="d-flex content-items">
+                    <div>
+                        <span>diplome : </span>
+                    </div>
+                    <div *ngFor="let x of agent_search">
+                        <div><span>{{ x.diplome }}</span></div>
+                    </div>
+                </div>
+                <div class="d-flex content-items">
+                    <div>
+                        <span>telephone : </span>
+                    </div>
+                    <div *ngFor="let x of agent_search">
+                        <div><span>{{ x.telephone }}</span></div>
+                    </div>
+                </div>
+                <div class="d-flex content-items">
+                    <div>
+                        <span>Email : </span>
+                    </div>
+                    <div *ngFor="let x of agent_search">
+                        <div><span>{{ x.email }}</span></div>
+                    </div>
+                </div>
+                <div class="d-flex content-items">
+                    <div>
+                        <span>Nom poste : </span>
+                    </div>
+                    <div *ngFor="let x of agent_search">
+                        <div><span>{{ x.nom_poste }}</span></div>
+                    </div>
+                </div>
+                <div class="d-flex content-items">
+                    <div>
+                        <span>Nom d'etablissement : </span>
+                    </div>
+                    <div *ngFor="let x of agent_search">
+                        <div><span>{{ x.id_etab }}</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container">
+    <div class="modal fade" id="ajoutAgent" tabindex="-1" aria-labelledby="titreModal" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="titreModal">Ajouter Nouveau Personnel publique</h1>
+                    <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="form-control">
+                        <div class="d-flex content-modal">
+                            <div>
+                                <label>matricule</label>
+                                <input type="text" placeholder="Entrez le numero matricule"
+                                    [(ngModel)]="agent.matricule" [ngModelOptions]="{standalone: true}"
+                                    class="form-control">
+                                <label>nom</label>
+                                <input type="text" class="form-control" placeholder="nom ........"
+                                    [(ngModel)]="agent.nom_agent" [ngModelOptions]="{standalone: true}">
+                                <label>prenom</label>
+                                <input type="text" class="form-control" placeholder="prenom .........."
+                                    [(ngModel)]="agent.prenom_agent" [ngModelOptions]="{standalone: true}">
+                                <label>date de naissance</label>
+                                <input type="date" class="form-control" placeholder="SAisir la date de naissance"
+                                    [(ngModel)]="agent.naissance" [ngModelOptions]="{standalone: true}">
+                                <label>Numero de la CIN</label>
+                                <input type="text" class="form-control" placeholder="Entrez le numero de CIN"
+                                    [(ngModel)]="agent.cin" [ngModelOptions]="{standalone: true}">
+                                <label>Adresse</label>
+                                <input type="text" class="form-control" placeholder="Adresse ...."
+                                    [(ngModel)]="agent.adresse_agent" [ngModelOptions]="{standalone: true}">
+                            </div>
+                            <div>
+                                <label>diplome</label>
+                                <select [(ngModel)]="agent.diplome" class="form-select"
+                                    [ngModelOptions]="{standalone: true}">
+                                    <option value="BEPC">BEPC</option>
+                                    <option value="BACC">BACC</option>
+                                    <option value="BACC + 1">BACC + 1</option>
+                                    <option value="BACC + 2">BACC + 2</option>
+                                    <option value="LICENCE">LICENCE</option>
+                                    <option value="MASTER I">MASTER I</option>
+                                    <option value="MASTER II">MASTER II</option>
+                                </select>
+
+                                <label>Telephone</label>
+                                <input type="text" class="form-control" placeholder="Numero telephone ...."
+                                    [(ngModel)]="agent.telephone" [ngModelOptions]="{standalone: true}">
+                                <label>Email</label>
+                                <input type="text" class="form-control" placeholder="Email ...."
+                                    [(ngModel)]="agent.email" [ngModelOptions]="{standalone: true}">
+                                <label>Nom poste</label>
+                                <select [(ngModel)]="agent.nom_poste" class="form-select"
+                                    [ngModelOptions]="{standalone: true}">
+                                    <option value="Surveillant">Surveillant</option>
+                                    <option value="Secretaire">Secretaire</option>
+                                    <option value="Enseignant">Enseignant</option>
+                                    <option value="Directeur">Directeur</option>
+                                    <option value="Proviseur">Proviseur</option>
+                                </select>
+                                <label>etablissement</label>
+                                <input type="text" class="form-control" placeholder="etablissement ...."
+                                    [(ngModel)]="agent.id_etab" [ngModelOptions]="{standalone: true}">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary" (click)=" save()">
+                        <i class="fa fa-plus"><span>ajouter</span></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

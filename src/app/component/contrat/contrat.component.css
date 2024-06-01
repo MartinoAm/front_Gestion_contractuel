@@ -1,0 +1,94 @@
+.content-page {
+    justify-content: space-between;
+    margin: 10px
+}
+
+.header {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    background-color: rgb(12, 166, 249);
+    border-radius: 10px;
+}
+
+.content-header {
+    justify-content: space-around;
+}
+
+.btn {
+    padding: 5px;
+}
+
+.content {
+    width: 500px;
+    box-shadow: 5px 1px 10px 2px rgb(35, 19, 19);
+    border-radius: 10px;
+    height: 80vh;
+}
+
+.content h3,
+.content-affiche-liste h3 {
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+
+.content-affiche-liste {
+    width: 500px;
+    box-shadow: 5px 1px 10px 2px rgb(35, 19, 19);
+    border-radius: 10px;
+}
+
+.content-affiche {
+    justify-content: space-between;
+    margin: 0 45px;
+}
+
+#btn {
+    margin-right: 0px;
+}
+
+.modal-header {
+    background-color: rgb(12, 166, 249);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+label {
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin: 0 12px;
+}
+
+input {
+    margin: 0 12px;
+    width: 450px;
+}
+
+.content-items {
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+span:not(.add span, .modal-footer) {
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: justify;
+}
+
+#search {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.span {
+    margin: 0 5px;
+}

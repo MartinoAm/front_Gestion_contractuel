@@ -1,0 +1,99 @@
+<div class="container-fluid g-0">
+    <div class="d-flex separe">
+        <div>
+            <h2 class="text-center">{{ titre }}</h2>
+        </div>
+        <div class="add">
+            <span class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addForms">
+                <i class="fa fa-plus"></i>
+            </span>
+        </div>
+    </div>
+    <hr>
+    <div class="container" ngSkipHydration>
+        <table class="table" *ngIf="etabListe.length > 0">
+
+            <thead>
+                <th class="col">ID</th>
+                <th class="col">Nom de l'etablissement</th>
+                <th class="col">Localisation</th>
+                <th class="col">Action</th>
+            </thead>
+            <tbody *ngFor="let itemListe of etabListe; let i = index">
+                <td>{{ itemListe.id_etab }}</td>
+                <td>{{ itemListe.nom_etab }}</td>
+                <td>{{ itemListe.adress_etab }}</td>
+                <td>
+                    <i class="fa fa-edit btn btn-success" data-bs-toggle="modal" data-bs-target="#updateForms"
+                        (click)="setUpdate(i)"></i>
+                    <i class="fa fa-trash btn btn-danger" (click)="delete(i)"></i>
+                </td>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="modal fade" id="addForms" tabindex="-1" aria-labelledby="titreModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5 text-center" id="titreModal">Nouvelle Etablissement</h1>
+                <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" [(ngModel)]="etablissement.id_etab"
+                        [ngModelOptions]="{standalone: true}" placeholder="...." id="idFloat" disabled="">
+                    <label for="idFloat">ID</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" [(ngModel)]="etablissement.nom_etab"
+                        [ngModelOptions]="{standalone: true}" placeholder="...." id="nomFloat">
+                    <label for="nomFloat">Nom de l'etablissement</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" [(ngModel)]="etablissement.adress_etab"
+                        [ngModelOptions]="{standalone: true}" placeholder="...." id="localisation">
+                    <label for="localisation">Localisation</label>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-primary" (click)="addEtablissement()">Ajouter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="updateForms" tabindex="-1" aria-labelledby="titreModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="titreModal">Upadate information Etablissement</h1>
+                <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" [(ngModel)]="etab.id_etab"
+                        [ngModelOptions]="{standalone: true}" placeholder="...." id="idFloat" disabled>
+                    <label for="idFloat">ID</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" [(ngModel)]="etab.nom_etab"
+                        [ngModelOptions]="{standalone: true}" placeholder="...." id="nomFloat">
+                    <label for="nomFloat">Nom de l'etablissement</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" [(ngModel)]="etab.adress_etab"
+                        [ngModelOptions]="{standalone: true}" placeholder="...." id="localisation">
+                    <label for="localisation">Localisation</label>
+                </div>
+
+                <div class="modal-footer">
+                    <button class="btn btn-primary" (click)="update()">Modifier</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

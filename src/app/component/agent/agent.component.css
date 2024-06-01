@@ -1,0 +1,73 @@
+.header {
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: white;
+    background-color: rgb(12, 166, 249);
+    border-radius: 10px;
+    height: 40px;
+}
+
+.header-separe {
+    justify-content: space-around;
+}
+
+.header-separe input {
+    width: 250px;
+    outline: none;
+    border-radius: 5px;
+    margin: 0 8px;
+}
+
+.fa-search,
+.fa-plus {
+    cursor: pointer;
+}
+
+.add span {
+    margin: 12px;
+    text-transform: capitalize;
+}
+
+.content-page {
+    justify-content: space-around;
+}
+
+.content {
+    margin: 45px;
+    width: 450px;
+    box-shadow: 5px 1px 10px 2px rgb(35, 19, 19);
+    height: 60vh;
+}
+
+.content-items {
+    justify-content: space-around;
+    margin: 30px 0;
+}
+
+
+span:not(.add span, .modal-footer) {
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    text-align: justify;
+}
+
+.modal-header {
+    background-color: rgb(12, 166, 249);
+    justify-content: center;
+    align-items: center;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: capitalize;
+}
+
+.content-modal {
+    justify-content: space-around;
+}
+
+label {
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    font-size: 600;
+}

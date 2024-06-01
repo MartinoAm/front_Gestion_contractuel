@@ -1,0 +1,159 @@
+<div class="container-fluid g-0">
+    <div class="header">
+        <h3 class="text-center">{{ headerContent}}</h3>
+    </div>
+    <hr>
+    <div class="d-flex content-header">
+        <div class="search d-flex">
+            <div>
+                <input type="text" placeholder="Entrez matricule" class="form-floating" id="search"
+                    [(ngModel)]="matricule">
+                <i class="fa fa-search btn btn-primary" (click)=" searchData()"></i>
+            </div>
+        </div>
+        <div>
+            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ajoutContrat">
+                <i class="fa fa-plus"><span class="span">Ajouter</span></i>
+            </button>
+        </div>
+    </div>
+
+    <div class="d-flex content-page">
+        <div class="content">
+            <h3>Modification de contrat</h3>
+            <hr>
+            <label>Code contrat</label>
+            <input type="text" placeholder="Entrez le code de contrat .." [(ngModel)]="contrat.code_contrat"
+                class="form-control">
+            <label>Matricule</label>
+            <input type="text" placeholder="Entrez le matricule" [(ngModel)]="contrat.matricule" class="form-control">
+            <label>Reference de dossier</label>
+            <input type="text" placeholder="Entrez le reference de dossier" [(ngModel)]="contrat.refdoss"
+                class="form-control">
+            <label>Grade</label>
+            <select name="grade" aria-label="Selectionner un grade " [(ngModel)]="contrat.grade" class="form-select">
+                <option value="AUXILIAIRE ECHELON I">AUXILIAIRE ECHELON I </option>
+                <option value="AUXILIAIRE ECHELON II">AUXILIAIRE ECHELON II</option>
+                <option value="AUXILIAIRE ECHELON III">AUXILIAIRE ECHELON III</option>
+                <option value="AUXILIAIRE ECHELON IV">AUXILIAIRE ECHELON IV</option>
+                <option value="AUXILIAIRE ECHELON V">AUXILIAIRE ECHELON V</option>
+            </select>
+            <label>Type de Contrat</label>
+            <select name="type" aria-label="Type de contrat" [(ngModel)]="contrat.type_contrat" class="form-select">
+                <option value="Avenat">Avenant</option>
+                <option value="Avancement">Avancement</option>
+            </select>
+            <label>Date debut de contrat</label>
+            <input type="date" placeholder="Entrez la date de debut de contrat" [(ngModel)]="contrat.datecontrat"
+                class="form-control">
+            <button class="btn btn-primary">
+                <i class="fa fa-edit">Modifier</i>
+            </button>
+        </div>
+        <div class="content-affiche-liste">
+            <h3>Contrat Personnel</h3>
+            <hr>
+            <div class="d-flex content-items">
+                <div>
+                    <span>reference de dossier: </span>
+                </div>
+                <div *ngFor="let data of contratSearch">
+                    <div><span>{{ data.refdoss }}</span></div>
+                </div>
+            </div>
+            <div class="d-flex content-items">
+                <div>
+                    <span>code contrat : </span>
+                </div>
+                <div *ngFor="let data of contratSearch">
+                    <div><span>{{ data.code_contrat }}</span></div>
+                </div>
+
+            </div>
+            <div class="d-flex content-items">
+                <div>
+                    <span>matricule : </span>
+                </div>
+                <div *ngFor="let data of contratSearch">
+                    <div><span>{{ data.matricule }}</span></div>
+                </div>
+            </div>
+            <div class="d-flex content-items">
+                <div>
+                    <span>grade : </span>
+                </div>
+                <div *ngFor="let data of contratSearch">
+                    <div><span>{{ data.grade }}</span></div>
+                </div>
+            </div>
+            <div class="d-flex content-items">
+                <div>
+                    <span>type contrat </span>
+                </div>
+                <div *ngFor="let data of contratSearch">
+                    <div><span>{{ data.type_contrat }}</span></div>
+                </div>
+            </div>
+            <div class="d-flex content-items">
+                <div>
+                    <span>date contrat : </span>
+                </div>
+                <div *ngFor="let data of contratSearch">
+                    <div><span>{{ data.datecontrat }}</span></div>
+                </div>
+            </div>
+            <div id="btn">
+                <button class="btn btn-primary">
+                    <i class="fa fa-edit">
+                        Modifier
+                    </i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="ajoutContrat" tabindex="-1" aria-labelledby="titreModal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="titreModal">Ajouter Nouveau contrat</h1>
+                <button class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form class="form-control">
+                    <label>Code contrat</label>
+                    <input type="text" class="form-control" placeholder="Entrez le code de contrat .."
+                        [(ngModel)]="contrat.code_contrat" [ngModelOptions]="{standalone: true}">
+                    <label>Matricule</label>
+                    <input type="text" class="form-control" placeholder="Entrez le matricule"
+                        [(ngModel)]="contrat.matricule" [ngModelOptions]="{standalone: true}">
+                    <label>Reference de dossier</label>
+                    <input type="text" class="form-control" placeholder="Entrez le reference de dossier"
+                        [(ngModel)]="contrat.refdoss" [ngModelOptions]="{standalone: true}">
+                    <label>Grade</label>
+                    <select name="grade" class="form-select" aria-label="Selectionner un grade "
+                        [(ngModel)]="contrat.grade" [ngModelOptions]="{standalone: true}">
+                        <option value="AUXILIAIRE ECHELON I">AUXILIAIRE ECHELON I </option>
+                        <option value="AUXILIAIRE ECHELON II">AUXILIAIRE ECHELON II</option>
+                        <option value="AUXILIAIRE ECHELON III">AUXILIAIRE ECHELON III</option>
+                        <option value="AUXILIAIRE ECHELON IV">AUXILIAIRE ECHELON IV</option>
+                        <option value="AUXILIAIRE ECHELON V">AUXILIAIRE ECHELON V</option>
+                    </select>
+                    <label>Type de Contrat</label>
+                    <select name="type" aria-label="Type de contrat" class="form-select"
+                        [(ngModel)]="contrat.type_contrat" [ngModelOptions]="{standalone: true}">
+                        <option value="Avenant">Avenant</option>
+                        <option value="Avancement">Avancement</option>
+                    </select>
+                    <label>Date debut de contrat</label>
+                    <input type="date" placeholder="Entrez la date de debut de contrat"
+                        [(ngModel)]="contrat.datecontrat" class="form-control" [ngModelOptions]="{standalone: true}">
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" (click)="saveNewContrat()">Ajouter</button>
+            </div>
+        </div>
+    </div>
+</div>

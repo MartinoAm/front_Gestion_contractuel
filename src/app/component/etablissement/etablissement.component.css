@@ -1,0 +1,30 @@
+.add {
+    margin-top: 2px;
+}
+
+.separe {
+    justify-content: space-around;
+    background-color: rgb(12, 166, 249);
+    border-radius: 10px;
+    height: 40px;
+}
+
+.modal-header {
+    background-color: rgb(12, 166, 249);
+    color: white;
+    font-weight: 600;
+}
+
+i.fa-edit,
+i.fa-trash {
+    font-size: 12px;
+    text-align: center;
+    margin: 2px;
+    cursor: pointer;
+}
+
+h2 {
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
